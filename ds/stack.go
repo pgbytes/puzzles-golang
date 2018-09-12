@@ -20,7 +20,7 @@ func (s *Stack) Pop() (string, error) {
 		return "", errors.New("stack is empty")
 	}
 	top := s.data[topIndex]
-	s.data[topIndex-1] = "" // to avoid memory leak
+	s.data[topIndex] = "" // to avoid memory leak
 	s.data = s.data[:topIndex]
 	return top, nil
 }
