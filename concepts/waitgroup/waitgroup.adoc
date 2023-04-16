@@ -1,0 +1,11 @@
+= Wait Group
+
+[source,go]
+----
+var wg sync.WaitGroup
+wg.Add(1)         // 1 - Add
+go func() {       // 2 - The go routine
+  defer wg.Done() // 3 - Done
+  someFunc()      // 4 - Your Code
+} ()              // 5 - Remember to call the goroutine
+----
